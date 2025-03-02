@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content>
+    <meta name="description" content="An Hello World! example">
+    <meta name="theme-color" content="#2d2c2c">
+    <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:url" content="https://">
+    <meta property="og:title" content>
+    <meta property="og:description" content="An Hello World! example">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://">
+    <title></title>
+    <link rel="icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link href="./app.css" type="text/css" rel="stylesheet">
+    <link href="https://unpkg.com/spectre.css@0.5.9/dist/spectre.min.css" type="text/css" rel="stylesheet">
+    <script src="./wasm_exec.js" defer></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>gotoproto</h1>
+      <p>This tool converts Go code into proto representation.</p>
+      <p>Paste go struct here</p>
+      <p>
+         | Created with 
+        <a href="https://github.com/maxence-charriere/go-app">go-app</a>
+      </p>
+      <div class="columns">
+        <div class="column">
+          <div class="form-group">
+            <textarea rows="30" class="form-input" placeholder="Go code"></textarea>
+          </div>
+        </div>
+        <div class="column">
+          <div class="form-group">
+            <textarea rows="30" placeholder="Ast Output" class="form-input" readonly></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="goapp-app-info" id="app-wasm-loader">
+      <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" alt="wasm loader icon" src="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.png">
+      <p id="app-wasm-loader-label" class="goapp-label">0%</p>
+    </aside>
+  </body>
+</html>
