@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content>
+    <meta name="description" content="Convert Go model to Proto">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+    <link href="https://unpkg.com/spectre.css/dist/spectre.min.css" type="text/css" rel="stylesheet">
+    <script src="/gotoproto/wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("/gotoproto/main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>gotoproto</h1>
+    <p>This tool converts Go code into Protobuf representation.</p>
+    <p>Paste Go struct here</p>
+    <div class="columns">
+        <div class="column">
+            <div class="form-group">
+                <textarea placeholder="Go code" rows="30" class="form-input" onInput="Convert(this.value);"></textarea>
+            </div>
+        </div>
+        <div class="column">
+            <div class="form-group">
+                <textarea id="output" rows="30" placeholder="Proto result" class="form-input" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
